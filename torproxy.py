@@ -47,7 +47,7 @@ class TorProxy:
             ["brew", "services", "start", "tor"], stdout=subprocess.DEVNULL
         )
         if start_tor_service.wait() != 0:
-            print("Something went worng...")
+            print("Something went wrong...")
             exit()
         else:
             print("Tor service started")
@@ -59,7 +59,7 @@ class TorProxy:
             stdout=subprocess.DEVNULL,
         )
         if set_network_proxy.wait() != 0:
-            print("Something went worng...")
+            print("Something went wrong...")
         else:
             print("Tor Proxy added")
 
@@ -69,7 +69,7 @@ class TorProxy:
             stdout=subprocess.DEVNULL,
         )
         if connect_to_tor_proxy.wait() != 0:
-            print("Something went worng...")
+            print("Something went wrong...")
         else:
             print("Connected to Tor proxy")
             print(f"Tor IP address: {self.get_ip_address()}")
@@ -81,7 +81,7 @@ class TorProxy:
             stdout=subprocess.DEVNULL,
         )
         if disconnect_tor_proxy.wait() != 0:
-            print("Something went worng...")
+            print("Something went wrong...")
         else:
             print("Disconnected to Tor proxy")
 
@@ -91,7 +91,7 @@ class TorProxy:
             ["brew", "services", "stop", "tor"], stdout=subprocess.DEVNULL
         )
         if start_tor_service.wait() != 0:
-            print("Something went worng...")
+            print("Something went wrong...")
         else:
             print("Tor service stopped")
 
